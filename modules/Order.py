@@ -10,16 +10,6 @@ class Order(BaseModel):
     number_of_items: int = Field(gt=0)
     time: str
 
-    @model_validator(mode='before')
-    @classmethod
-    def check_input_data_keys(cls, data):
-        if isinstance(data, dict):
-            assert set(Order.model_fields.keys()) == set(data.keys())
-        else:
-            raise ValidationError(f"Incoming JSON do not contain required keys: {Order.model_fields.keys()},"
-                                  f"\n provided keys:{data.keys()}")
-        return data
-
     @computed_field(return_type=int)
     @property
     def fee(self):
