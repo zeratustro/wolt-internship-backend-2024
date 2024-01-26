@@ -13,7 +13,6 @@ class Order(BaseModel):
     @computed_field(return_type=int)
     @property
     def fee(self):
-        print("FEE count")
         max_fee = 1500
 
         value = 0
@@ -63,8 +62,6 @@ class Order(BaseModel):
         return value
 
     def _multi_rushTime(self, value:int)->int:
-        print(type(self.time.tzinfo))
-        print(self.time.tzname())
         if self.time.weekday() == 4:
             if time(15,0) <= self.time.time() < time(20,0):
                 try:
