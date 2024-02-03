@@ -1,4 +1,5 @@
-delivery fee calculator example. \n for https://github.com/zeratustro/wolt-internship-backend-2024 \n
+delivery fee calculator example. for https://github.com/zeratustro/wolt-internship-backend-2024 
+
 0) extract files to new folder
 1) open the project with your IDE
 2) create new venv for the project. 
